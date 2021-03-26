@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head xmlns:th="http://www.thymeleaf.org" th:replace="layouts/layout_base::head">
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ul th:replace="layouts/layout_base :: nav"></ul>
+        <div class="container mt-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Detalle</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="post : ${posts}">
+                        <td th:text="${post.title}"></td>
+                        <td>
+                            <a th:href="@{GET/posts/}+${post.id_post}" class="btn btn-primary"th:text="Detalles"></a>
+                        </td>
+                        <td>
+                            <a th:href="@{PATCH/posts/}+${post.id_post}" class="btn btn-warning"th:text="Editar"></a>
+                        </td>
+                        <td>
+                            <a th:onclick="eliminar([[${post.id_post}]])" class="btn btn-danger"th:text="Eliminar"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        
+            
+
+        
+        <footer th:replace="layouts/layout_base :: footer"></footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        
+    </body>
+</html>

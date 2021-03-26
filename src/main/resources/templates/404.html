@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head xmlns:th="http://www.thymeleaf.org" th:replace="layouts/layout_base::head">
+        <title>Post no encontrado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ul th:replace="layouts/layout_base :: nav"></ul>
+        <div class="row m-0 justify-content-center aling-items-center vh-100">
+            <div class=" text-center col-sm-12 col-md-4 col-lg-3 col-xl-3 m-5">
+                <div>
+                    <h1>Post no encontrado</h1> 
+                </div>
+                <br>
+                <br>
+                <img th:src="@{404.jpg}" />
+
+                <br>
+                <br>
+                <br>
+                <a class="btn-primary" href="/">Volver al inicio</a>
+            </div>
+        </div>
+    </body>
+</html>
