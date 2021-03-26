@@ -87,6 +87,9 @@ public class PostController {
         return "redirect:/";
         
     }
+    public void prubaDeRama(){
+        System.out.println("Probando la ramificación en git");
+    }
 
 }
 
